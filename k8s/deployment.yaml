@@ -14,15 +14,15 @@ spec:
     spec:
       containers:
         - name: postgre
-          image: postgres:14.3
+          image: postgre:14.3
           ports:
             - containerPort: 5432
           env:
-            - name: POSTGRES_PASSWORD
+            - name: POSTGRE_PASSWORD
               value: "Kube#123"
-            - name: POSTGRES_USER
+            - name: POSTGRE_USER
               value: "kubenews"
-            - name: POSTGRES_DB
+            - name: POSTGRE_DB
               value: "kubenews"
 ---
 apiVersion: v1
@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
         - name: kubenews
-          image: rafaelsperati/kube-news:v1
+          image: rafaelsperati/kube-news:v2
           env:
             - name: DB_DATABASE
               value: "kubenews"
